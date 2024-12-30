@@ -24,6 +24,17 @@ void add_to_tail(Node *&head, Node *&tail, int val)
     tail->next = newnode;
     tail = newnode;
 }
+int get_size(Node *head)
+{
+    int size = 0;
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        size++;
+        temp = temp->next;
+    }
+    return size;
+}
 
 void duplicate(Node *&head)
 {
@@ -35,43 +46,18 @@ void duplicate(Node *&head)
         a[temp->val]++;
 
         temp = temp->next;
-
-    }   
-    int len=sizeof(a)/sizeof(a[0]);
-    int flag=0;
-    for(int i=0; i<len; i++)
+    }
+    int len = sizeof(a) / sizeof(a[0]); 
+    int flag = 0;
+    for (int i = 0; i < len; i++)
     {
-        if(a[i]>1)
+        if (a[i] > 1)
         {
-            flag=1;
+            flag = 1;
             break;
         }
     }
-    cout<<(flag==1?"YES":"NO")<<endl;
-
-    // int a[105]={0};
-    // Node* temp=head;
-    // while(temp!=nullptr)
-    // {
-    //     a[temp->val]++;
-    //     // cout<<temp->val <<" ";
-    //     temp=temp->next;
-
-    // }
-    // int len=sizeof(a)/sizeof(a[0]);
-    // int flag=0;
-    // for(int i=1; i<len;i++)
-    // {
-    //     // cout<<a[i]<<endl;
-    //     if(a[i]>1)
-    //     {
-    //         flag=1;
-    //         break;
-    //     }
-
-    // }
-
-    // cout << (flag == 1 ? "YES" : "NO") << endl;
+    cout << (flag == 1 ? "YES" : "NO") << endl;
 }
 
 // void print_link(Node *head)
